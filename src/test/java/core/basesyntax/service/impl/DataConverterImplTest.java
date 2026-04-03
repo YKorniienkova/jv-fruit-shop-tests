@@ -1,15 +1,20 @@
 package core.basesyntax.service.impl;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import core.basesyntax.model.FruitTransaction;
 import core.basesyntax.service.DataConverter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 class DataConverterImplTest {
+    private static final String BANANA = "banana";
+    private static final String APPLE = "apple";
+    private static final int BANANA_QUANTITY = 20;
+    private static final int APPLE_QUANTITY = 10;
+
     private DataConverter converter;
     @BeforeEach
     void setUp() {
@@ -27,12 +32,12 @@ class DataConverterImplTest {
         assertEquals(2, result.size());
         FruitTransaction firstTransaction = result.get(0);
         assertEquals(FruitTransaction.Operation.BALANCE, firstTransaction.getOperation());
-        assertEquals("banana", firstTransaction.getFruit());
-        assertEquals(20, firstTransaction.getQuantity());
+        assertEquals(BANANA, firstTransaction.getFruit());
+        assertEquals(BANANA_QUANTITY, firstTransaction.getQuantity());
         FruitTransaction secondTransaction = result.get(1);
         assertEquals(FruitTransaction.Operation.SUPPLY, secondTransaction.getOperation());
-        assertEquals("apple", secondTransaction.getFruit());
-        assertEquals(10, secondTransaction.getQuantity());
+        assertEquals(APPLE, secondTransaction.getFruit());
+        assertEquals(APPLE_QUANTITY, secondTransaction.getQuantity());
     }
 
     @Test

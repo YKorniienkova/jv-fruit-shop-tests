@@ -1,13 +1,16 @@
 package core.basesyntax.strategy;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import core.basesyntax.db.Storage;
 import core.basesyntax.model.FruitTransaction;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 class BalanceOperationTest {
+    private static final int INITIAL_QUANTITY = 100;
+    private static final String BANANA = "banana";
+
     private Storage storage;
     private OperationHandler handler;
     private FruitTransaction fruitTransaction;
@@ -21,9 +24,9 @@ class BalanceOperationTest {
 
     @Test
     void handle_setQuantity_ok() {
-        fruitTransaction.setFruit("banana");
-        fruitTransaction.setQuantity(100);
+        fruitTransaction.setFruit(BANANA);
+        fruitTransaction.setQuantity(INITIAL_QUANTITY);
         handler.handle(fruitTransaction);
-        assertEquals(100, storage.getFruits().get("banana"));
+        assertEquals(INITIAL_QUANTITY, storage.getFruits().get(BANANA));
     }
 }
