@@ -8,6 +8,10 @@ import java.util.Map;
 public class ReportGeneratorImpl implements ReportGenerator {
     private Storage storage;
 
+    public ReportGeneratorImpl(Storage storage) {
+        this.storage = storage;
+    }
+
     @Override
     public String getReport() {
         StringBuilder report = new StringBuilder();
