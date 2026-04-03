@@ -7,17 +7,18 @@ import core.basesyntax.service.ShopService;
 import core.basesyntax.strategy.BalanceOperation;
 import core.basesyntax.strategy.OperationHandler;
 import core.basesyntax.strategy.PurchaseOperation;
-import core.basesyntax.strategy.SupplyOperation;
 import core.basesyntax.strategy.ReturnOperation;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import core.basesyntax.strategy.SupplyOperation;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import static core.basesyntax.model.FruitTransaction.Operation.BALANCE;
 import static core.basesyntax.model.FruitTransaction.Operation.PURCHASE;
-import static core.basesyntax.model.FruitTransaction.Operation.SUPPLY;
 import static core.basesyntax.model.FruitTransaction.Operation.RETURN;
+import static core.basesyntax.model.FruitTransaction.Operation.SUPPLY;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ShopServiceImplTest {
