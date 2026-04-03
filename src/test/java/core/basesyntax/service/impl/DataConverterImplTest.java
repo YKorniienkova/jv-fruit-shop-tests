@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import core.basesyntax.model.FruitTransaction;
 import core.basesyntax.service.DataConverter;
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.util.List;
 
 class DataConverterImplTest {
     private static final String BANANA = "banana";
@@ -16,6 +16,7 @@ class DataConverterImplTest {
     private static final int APPLE_QUANTITY = 10;
 
     private DataConverter converter;
+
     @BeforeEach
     void setUp() {
         converter = new DataConverterImpl();
