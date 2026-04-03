@@ -9,8 +9,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 class OperationStrategyImplTest {
     private Storage storage;
@@ -35,25 +35,4 @@ class OperationStrategyImplTest {
     void getHandler_nullHandler() {
         assertNull(operationStrategy.getHandler(FruitTransaction.Operation.BALANCE));
     }
-
-//    @Test
-//    void handle_negativeQuantity_notOK() {
-//        OperationHandler handler = new PurchaseOperation(storage);
-//
-//        FruitTransaction transaction = new FruitTransaction();
-//        transaction.setFruit("banana");
-//        transaction.setQuantity(-5);
-//
-//        assertThrows(RuntimeException.class, () -> {
-//            handler.handle(transaction);
-//        });
-//    }
-//
-//    @Test
-//    void handle_minusQuantity_notOk() {
-//        OperationHandler handler = new SupplyOperation(storage);
-//
-//        FruitTransaction transaction = new FruitTransaction();
-//
-//    }
 }
